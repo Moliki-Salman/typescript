@@ -19,7 +19,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // //because promise return something, we need to pass it into a variable, in this case the promise is passed into let res.
 let res = new Promise(function (resolve, reject) {
     //the let res is a return value
-    let username = "Sofy";
+    let username = "Sofy"; // here is where we declare the value inside the promise
     if (username.length == 4) {
         resolve("positive");
     }
@@ -47,7 +47,7 @@ let ping = new Promise(function (res, rej) {
         rej("bad");
     }
 });
-ping.then(function () {
+ping.then(function (mess) {
     console.log(sum());
 }).catch();
 function sum() {
@@ -55,7 +55,7 @@ function sum() {
 }
 //in typescript onces you declare a return, you must specify the return value
 //in the first funciton, you can pass a value/parameter inside the first, while the second can only return a promise, one cannot interact or pass in a value.
-//EXAMPLE 3
+//EXAMPLE 3: A function that returns a promise, you can pass a parameter inside the function
 function res1(dt) {
     return new Promise(function (resolve, reject) {
         if (dt.length == 4) {
@@ -66,7 +66,7 @@ function res1(dt) {
         }
     });
 }
-res1("oluchi")
+res1("oluchi") // here is where value that was passed into the function
     .then(function (message) {
     console.log(message);
 })
