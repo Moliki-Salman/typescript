@@ -1,3 +1,4 @@
+//Example 1
 let exp = new Promise(function (resolve, reject) {
   //an example of a promise that is assigned to a variable
   let food = "Eba"; // the parameter is declared inside the promise.
@@ -15,6 +16,7 @@ exp
     console.log("The answer is " + err);
   });
 
+//Example 2
 function exp2(pasword: string): Promise<string> {
   // an example of a function that accept a parameter, the function returns a promise
   return new Promise(function (resolve, reject) {
@@ -32,3 +34,27 @@ exp2("uniqPassword") // the value is passed here into the function
   .catch(function (err) {
     console.log(`The password is  ${err}`);
   });
+
+//Example 3: funtion that returns apromise and uses async/await function for its result
+function promAsync(username: string): Promise<string> {
+  return new Promise(function (resolve, reject) {
+    if (username.length >= 3) {
+      resolve("valid username");
+    } else {
+      reject("invalid username");
+    }
+  });
+}
+
+async function funt() {
+  try {
+    let res1 = await promAsync("maxes");
+    console.log(res1);
+    let res2 = await promAsync("xc");
+    console.log(res2);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+funt()
