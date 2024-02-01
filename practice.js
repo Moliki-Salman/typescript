@@ -1,6 +1,6 @@
 "use strict";
 let exp = new Promise(function (resolve, reject) {
-    let food = "Eba";
+    let food = "Eba"; // the parameter is declared inside the promise.
     if (food.length >= 5) {
         resolve("correct");
     }
@@ -13,5 +13,5 @@ exp
     console.log("The answer is " + " " + message);
 })
     .catch(function (err) {
-    console.log("The answer is " + " " + err);
+    console.log("The answer is " + err);
 });

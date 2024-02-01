@@ -11,5 +11,5 @@ exp
     console.log("The answer is " + " " + message);
   })
   .catch(function (err) {
-    console.log("The answer is " + " " + err);
+    console.log("The answer is " + err);
   });
